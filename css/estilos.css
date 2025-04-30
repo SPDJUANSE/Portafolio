@@ -147,7 +147,7 @@
   
   /* Encabezado */
   .header {
-    height: 300px;
+    height: 350px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     display: flex;
