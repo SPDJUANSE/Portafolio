@@ -1,20 +1,34 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portafolio | Juan Sebastián García</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portafolio de Juan Sebastián García, Ingeniero de Software y Desarrollador Web & Móvil especializado en Java, Python, React y más.">
+  <meta name="keywords" content="Portafolio, Juan Sebastián García, Ingeniería de Software, Desarrollo Web, Desarrollo Móvil">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://tusitio.com/">
+
+  <!-- Preconnect para mejorar la carga de fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilos.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="Imagenes/favicon.ico" type="image/x-icon">
+  
+  <title>Portafolio | Juan Sebastian Garcia Porras</title>
 </head>
 <body>
 
   <nav>
     <div class="nav-container">
-      <div class="nav-logo">Juan Sebastián García</div>
+      <div class="nav-logo">Juan Sebastian Garcia Porras</div>
       <ul class="nav-menu">
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#skills">Habilidades</a></li>
@@ -25,11 +39,10 @@
     </div>
   </nav>
 
-
   <header class="header">
     <div class="header-content">
-      <img src="js/Hola.jpeg" alt="Imagen desde js/hola.jpg">
-      <h1>Juan Sebastián García</h1>
+      <img src="Imagenes/Hola.jpeg" alt="Juan Sebastian Garcia Porras En un espejo" loading="lazy">
+      <h1>Juan Sebastian Garcia Porras</h1>
       <p>Ingeniero de Software | Desarrollador Web & Móvil</p>
     </div>
   </header>
@@ -126,30 +139,28 @@
       </ul>
     </section>
 
-
     <section id="courses">
       <h2>Cursos y Certificaciones</h2>
       <ul class="courses-list">
-          <li class="course-item" data-image="DiplomadoenDesarrollodeaplicacionesweb.jpg">
-              <strong>Diplomado en Desarrollo de aplicaciones web</strong><br>
-              Ministerio de las TIC y UNAB | Bogotá DC
-          </li>
-          <li class="course-item" data-image="TécnicoLaboralenprogramaciónconénfasisenaplicacionesweb.jpg">
-              <strong>Técnico Laboral en programación con énfasis en aplicaciones web</strong><br>
-              Universidad Autónoma de Bucaramanga | Bogotá DC
-          </li>
-          <li class="course-item" data-image="TécnicoenProgramacióndeSoftware.jpg">
-              <strong>Técnico en Programación de Software</strong><br>
-              SENA | Bogotá DC
-          </li>
+        <li class="course-item" data-image="Diplomado.png">
+          <strong>Diplomado en Desarrollo de aplicaciones web</strong><br>
+          Ministerio de las TIC y UNAB | Bogotá DC
+        </li>
+        <li class="course-item" data-image="TecnicoLaboral.png">
+          <strong>Técnico Laboral en programación con énfasis en aplicaciones web</strong><br>
+          Universidad Autónoma de Bucaramanga | Bogotá DC
+        </li>
+        <li class="course-item" data-image="Tecnico.png">
+          <strong>Técnico en Programación de Software</strong><br>
+          SENA | Bogotá DC
+        </li>
       </ul>
     </section>
 
-
     <div class="modal" id="certificateModal">
       <div class="modal-content">
-          <button class="modal-close">&times;</button>
-          <img src="" alt="Certificado" id="certificateImage">
+        <button class="modal-close">&times;</button>
+        <img src="" alt="Certificado" id="certificateImage">
       </div>
     </div>
 
@@ -202,39 +213,39 @@
     <p>&copy; 2025 Juan Sebastián García Porras | Todos los derechos reservados</p>
   </footer>
 
-  <script>
+  <!-- Script con defer para mejorar carga -->
+  <script defer>
     document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('certificateModal');
-        const modalImg = document.getElementById('certificateImage');
-        const closeModal = document.querySelector('.modal-close');
-    
-        // Abrir modal
-        document.querySelectorAll('.course-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const imageName = this.dataset.image;
-                modalImg.src = `./imagenes/${imageName}`;
-                modal.style.display = 'flex';
-            });
+      const modal = document.getElementById('certificateModal');
+      const modalImg = document.getElementById('certificateImage');
+      const closeModal = document.querySelector('.modal-close');
+
+      // Abrir modal
+      document.querySelectorAll('.course-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const imageName = this.dataset.image;
+          modalImg.src = `./Imagenes/${imageName}`;
+          modal.style.display = 'flex';
         });
-    
-        // Cerrar modal
-        closeModal.addEventListener('click', () => modal.style.display = 'none');
-        window.addEventListener('click', (e) => {
-            if(e.target === modal) modal.style.display = 'none';
-        });
-    
-        // Precargar imágenes
-        const preloadImages = [
-            './imagenes/DiplomadoenDesarrollodeaplicacionesweb.jpg',
-            './imagenes/TécnicoLaboralenprogramaciónconénfasisenaplicacionesweb.jpg',
-            './imagenes/TécnicoenProgramacióndeSoftware.jpg'
-        ];
-        
-        preloadImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
+      });
+
+      // Cerrar modal
+      closeModal.addEventListener('click', () => modal.style.display = 'none');
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+
+      const preloadImages = [
+        './Imagenes/Diplomado.png',
+        './Imagenes/TecnicoLaboral.png',
+        './Imagenes/Tecnico.png'
+      ];
+
+      preloadImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
     });
-    </script>
+  </script>
 </body>
 </html>
