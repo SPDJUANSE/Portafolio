@@ -21,6 +21,11 @@
 
 </head>
 <body>
+  <script>
+    if (window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("index.php")) {
+      window.location.replace(window.location.origin + "/");
+    }
+  </script>
 
   <nav>
     <div class="nav-container">
