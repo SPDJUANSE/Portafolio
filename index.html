@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Portafolio | Juan Sebastián García Porras</title>
-  <meta name="description" content="Portafolio de Juan Sebastián García, Ingeniero de Software y Desarrollador Web & Móvil especializado en Java, Python, React y más.">
+  <title itemprop="name">Portafolio | Juan Sebastián García Porras</title>
+  <meta name="description" content="Portafolio de Juan Sebastián García, Ingeniero de Software y Desarrollador Web & Móvil especializado en Java, Python, React y más." itemprop="description">
   <meta name="keywords" content="Portafolio, Juan Sebastián García, Ingeniería de Software, Desarrollo Web, Desarrollo Móvil">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Juan Sebastián García Porras">
@@ -18,44 +18,39 @@
   <link rel="stylesheet" href="css/estilos.css">
 
   <link rel="canonical" href="https://portafolio-lime-theta-45.vercel.app/">
-
 </head>
-<body>
-  <script>
-    if (window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("index.php")) {
-      window.location.replace(window.location.origin + "/");
-    }
-  </script>
+<body itemscope itemtype="https://schema.org/Person">
 
-  <nav>
+  <nav itemprop="knowsAbout">
     <div class="nav-container">
-      <div class="nav-logo">Juan Sebastian Garcia Porras</div>
+      <div class="nav-logo" itemprop="name">Juan Sebastián García Porras</div>
       <ul class="nav-menu">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#experience">Experiencia</a></li>
-        <li><a href="#education">Educación</a></li>
-        <li><a href="#references">Referencias</a></li>
+        <li><a href="#about" itemprop="url">Sobre mí</a></li>
+        <li><a href="#skills" itemprop="url">Habilidades</a></li>
+        <li><a href="#experience" itemprop="url">Experiencia</a></li>
+        <li><a href="#education" itemprop="url">Educación</a></li>
+        <li><a href="#courses" itemprop="url">Cursos</a></li>
+        <li><a href="#references" itemprop="url">Referencias</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="header">
+  <header class="header" itemscope itemtype="https://schema.org/ImageObject">
     <div class="header-content">
-      <img src="Imagenes/Hola.jpeg" alt="Juan Sebastian Garcia Porras En un espejo" loading="lazy">
-      <h1>Juan Sebastian Garcia Porras</h1>
-      <p>Ingeniero de Software | Desarrollador Web & Móvil</p>
+      <img src="Imagenes/Hola.jpeg" alt="Juan Sebastian Garcia Porras en un espejo" loading="lazy" itemprop="contentUrl">
+      <h1 itemprop="name">Juan Sebastián García Porras</h1>
+      <p itemprop="jobTitle">Ingeniero de Software | Desarrollador Web & Móvil</p>
     </div>
   </header>
 
   <div class="container">
-    <section id="about">
+    <section id="about" itemprop="description">
       <h2>Sobre mí</h2>
       <div class="section-intro">
         <p>Soy un apasionado desarrollador de software con enfoque en soluciones web y móviles, actualmente cursando el 8° semestre de Ingeniería de Software en la Universidad Manuela Beltrán.</p>
       </div>
       <div class="card">
-        <p>Con experiencia en desarrollo tanto frontend como backend, he trabajado con tecnologías como Java, Spring Boot, JavaScript, React y Python. Además, poseo conocimientos sólidos en PostgreSQL, APIs REST, Docker, Git y metodologías ágiles como SCRUM.</p>
+        <p>Con experiencia en desarrollo tanto frontend como backend, he trabajado con tecnologías como <span itemprop="knowsAbout">Java</span>, <span itemprop="knowsAbout">Spring Boot</span>, <span itemprop="knowsAbout">JavaScript</span>, <span itemprop="knowsAbout">React</span> y <span itemprop="knowsAbout">Python</span>. Además, poseo conocimientos sólidos en <span itemprop="knowsAbout">PostgreSQL</span>, <span itemprop="knowsAbout">APIs REST</span>, <span itemprop="knowsAbout">Docker</span>, <span itemprop="knowsAbout">Git</span> y metodologías ágiles como <span itemprop="knowsAbout">SCRUM</span>.</p>
         <p>Me destaco por mi capacidad para resolver problemas de manera creativa y mi constante búsqueda de aprendizaje. Mi objetivo es ampliar mis habilidades técnicas para aportar soluciones innovadoras que generen un impacto positivo.</p>
       </div>
     </section>
@@ -63,79 +58,91 @@
     <section id="skills">
       <h2>Habilidades</h2>
       <div class="skills">
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fas fa-tasks"></i></span>
-          <span>SCRUM - Avanzado</span>
+          <span itemprop="name">SCRUM - Avanzado</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fab fa-java"></i></span>
-          <span>Java - Intermedio</span>
+          <span itemprop="name">Java - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fab fa-python"></i></span>
-          <span>Python - Intermedio</span>
+          <span itemprop="name">Python - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fab fa-react"></i></span>
-          <span>React - Intermedio</span>
+          <span itemprop="name">React - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fas fa-database"></i></span>
-          <span>PostgreSQL - Intermedio</span>
+          <span itemprop="name">PostgreSQL - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fas fa-server"></i></span>
-          <span>REST APIs - Intermedio</span>
+          <span itemprop="name">REST APIs - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fab fa-git-alt"></i></span>
-          <span>Git - Intermedio</span>
+          <span itemprop="name">Git - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fab fa-docker"></i></span>
-          <span>Docker - Intermedio</span>
+          <span itemprop="name">Docker - Intermedio</span>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" itemscope itemtype="https://schema.org/Skill" itemprop="hasCredential">
           <span class="skill-icon"><i class="fas fa-language"></i></span>
-          <span>Inglés - Básico</span>
+          <span itemprop="name">Inglés - Básico</span>
         </div>
       </div>
     </section>
 
     <section id="experience">
       <h2>Experiencia</h2>
-      <div class="card">
-        <h3>Desarrollador de Software</h3>
-        <small>Spot! | Agosto 2024 – Presente</small>
-        <p>Diseño de interfaces de usuario intuitivas y desarrollo de componentes backend para producto móvil en fase de crecimiento. Implementación de pruebas unitarias para asegurar la calidad y rendimiento del código.</p>
+      <div class="card" itemscope itemtype="https://schema.org/WorkExperience">
+        <h3 itemprop="jobTitle">Desarrollador de Software</h3>
+        <meta itemprop="startDate" content="2024-08" />
+        <meta itemprop="endDate" content="Present" />
+        <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+          <span itemprop="name">Spot!</span>
+        </div>
+        <p itemprop="description">Diseño de interfaces de usuario intuitivas y desarrollo de componentes backend para producto móvil en fase de crecimiento. Implementación de pruebas unitarias para asegurar la calidad y rendimiento del código.</p>
       </div>
-      <div class="card">
-        <h3>Desarrollador Full Stack</h3>
-        <small>Freelance | Febrero 2024 – Septiembre 2024</small>
-        <p>Desarrollo de componentes web responsivos y diseño de bases de datos para optimizar la eficiencia y experiencia de usuario en proyectos variados. Implementación de soluciones adaptadas a las necesidades específicas de cada cliente.</p>
+      <div class="card" itemscope itemtype="https://schema.org/WorkExperience">
+        <h3 itemprop="jobTitle">Desarrollador Full Stack</h3>
+        <meta itemprop="startDate" content="2024-02" />
+        <meta itemprop="endDate" content="2024-09" />
+        <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+          <span itemprop="name">Freelance</span>
+        </div>
+        <p itemprop="description">Desarrollo de componentes web responsivos y diseño de bases de datos para optimizar la eficiencia y experiencia de usuario en proyectos variados. Implementación de soluciones adaptadas a las necesidades específicas de cada cliente.</p>
       </div>
     </section>
 
     <section id="education">
       <h2>Educación</h2>
       <ul class="education-list">
-        <li class="education-item">
-          <strong>Ingeniería de Software</strong> — Universidad Manuela Beltrán (2021 – Actualidad)
+        <li class="education-item" itemscope itemtype="https://schema.org/EducationalOrganization">
+          <meta itemprop="startDate" content="2021" />
+          <meta itemprop="endDate" content="Present" />
+          <strong itemprop="name">Ingeniería de Software</strong> — Universidad Manuela Beltrán
         </li>
-        <li class="education-item">
-          <strong>Técnico Laboral en Programación</strong> — Universidad Autónoma de Bucaramanga (2023)
+        <li class="education-item" itemscope itemtype="https://schema.org/EducationalOrganization">
+          <meta itemprop="startDate" content="2023" />
+          <strong itemprop="name">Técnico Laboral en Programación</strong> — Universidad Autónoma de Bucaramanga
         </li>
-        <li class="education-item">
-          <strong>Técnico en Programación</strong> — SENA (2020)
+        <li class="education-item" itemscope itemtype="https://schema.org/EducationalOrganization">
+          <meta itemprop="startDate" content="2020" />
+          <strong itemprop="name">Técnico en Programación</strong> — SENA
         </li>
-        <li class="education-item">
-          <strong>Diplomado en Desarrollo Web</strong> — Ministerio TIC & UNAB (2022)
+        <li class="education-item" itemscope itemtype="https://schema.org/Course">
+          <strong itemprop="name">Diplomado en Desarrollo Web</strong> — Ministerio TIC & UNAB (2022)
         </li>
-        <li class="education-item">
-          <strong>Diplomado en Desarrollo Software</strong> — Ministerio TIC & UNAB (2022)
+        <li class="education-item" itemscope itemtype="https://schema.org/Course">
+          <strong itemprop="name">Diplomado en Desarrollo Software</strong> — Ministerio TIC & UNAB (2022)
         </li>
-        <li class="education-item">
-          <strong>Curso SCRUM</strong> — Oracle One (2023)
+        <li class="education-item" itemscope itemtype="https://schema.org/Course">
+          <strong itemprop="name">Curso SCRUM</strong> — Oracle One (2023)
         </li>
       </ul>
     </section>
@@ -143,17 +150,17 @@
     <section id="courses">
       <h2>Cursos y Certificaciones</h2>
       <ul class="courses-list">
-        <li class="course-item" data-image="Diplomado.png">
-          <strong>Diplomado en Desarrollo de aplicaciones web</strong><br>
-          Ministerio de las TIC y UNAB | Bogotá DC
+        <li class="course-item" data-image="Diplomado.png" itemscope itemtype="https://schema.org/Course">
+          <strong itemprop="name">Diplomado en Desarrollo de aplicaciones web</strong><br>
+          <span itemprop="provider">Ministerio de las TIC y UNAB | Bogotá DC</span>
         </li>
-        <li class="course-item" data-image="TecnicoLaboral.png">
-          <strong>Técnico Laboral en programación con énfasis en aplicaciones web</strong><br>
-          Universidad Autónoma de Bucaramanga | Bogotá DC
+        <li class="course-item" data-image="TecnicoLaboral.png" itemscope itemtype="https://schema.org/Course">
+          <strong itemprop="name">Técnico Laboral en programación con énfasis en aplicaciones web</strong><br>
+          <span itemprop="provider">Universidad Autónoma de Bucaramanga | Bogotá DC</span>
         </li>
-        <li class="course-item" data-image="Tecnico.png">
-          <strong>Técnico en Programación de Software</strong><br>
-          SENA | Bogotá DC
+        <li class="course-item" data-image="Tecnico.png" itemscope itemtype="https://schema.org/Course">
+          <strong itemprop="name">Técnico en Programación de Software</strong><br>
+          <span itemprop="provider">SENA | Bogotá DC</span>
         </li>
       </ul>
     </section>
@@ -168,26 +175,26 @@
     <section id="references">
       <h2>Referencias</h2>
       <div class="references">
-        <div class="reference-card">
-          <div class="reference-name">Hugo Alexander Ramírez</div>
-          <div class="reference-position">Cofundador de Spot!</div>
-          <div class="reference-contact">
+        <div class="reference-card" itemscope itemtype="https://schema.org/Person">
+          <div class="reference-name" itemprop="name">Hugo Alexander Ramírez</div>
+          <div class="reference-position" itemprop="jobTitle">Cofundador de Spot!</div>
+          <div class="reference-contact" itemprop="telephone">
             <i class="fas fa-phone"></i>
             +57 315 337 2698
           </div>
         </div>
-        <div class="reference-card">
-          <div class="reference-name">Ramiro Rodríguez</div>
-          <div class="reference-position">Gerente de Proyectos, Cubricol</div>
-          <div class="reference-contact">
+        <div class="reference-card" itemscope itemtype="https://schema.org/Person">
+          <div class="reference-name" itemprop="name">Ramiro Rodríguez</div>
+          <div class="reference-position" itemprop="jobTitle">Gerente de Proyectos, Cubricol</div>
+          <div class="reference-contact" itemprop="telephone">
             <i class="fas fa-phone"></i>
             +57 320 203 6156
           </div>
         </div>
-        <div class="reference-card">
-          <div class="reference-name">Olga Rojas</div>
-          <div class="reference-position">Empresaria</div>
-          <div class="reference-contact">
+        <div class="reference-card" itemscope itemtype="https://schema.org/Person">
+          <div class="reference-name" itemprop="name">Olga Rojas</div>
+          <div class="reference-position" itemprop="jobTitle">Empresaria</div>
+          <div class="reference-contact" itemprop="telephone">
             <i class="fas fa-phone"></i>
             +57 322 724 4072
           </div>
@@ -196,31 +203,21 @@
     </section>
   </div>
 
-  <footer>
-    <div class="social-links">
-      <a href="https://github.com/SPDJUANSE" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/juangarcia-ing" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://www.youtube.com/@juangarcia-gu9lq" target="_blank" rel="noopener">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="mailto:spdjuanse@gmail.com">
-        <i class="fas fa-envelope"></i>
-      </a>
+  <footer itemscope itemtype="https://schema.org/Person">
+    <div class="social-links" itemprop="sameAs">
+      <a href="https://github.com/SPDJUANSE" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/juangarcia-ing" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/@juangarcia-gu9lq" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+      <a href="mailto:spdjuanse@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>&copy; 2025 Juan Sebastián García Porras | Todos los derechos reservados</p>
+    <p>&copy; <span itemprop="birthDate">2025</span> Juan Sebastián García Porras | Todos los derechos reservados</p>
   </footer>
-
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const modal = document.getElementById('certificateModal');
       const modalImg = document.getElementById('certificateImage');
       const closeModal = document.querySelector('.modal-close');
-
 
       document.querySelectorAll('.course-item').forEach(item => {
         item.addEventListener('click', function() {
@@ -229,7 +226,6 @@
           modal.style.display = 'flex';
         });
       });
-
 
       closeModal.addEventListener('click', () => modal.style.display = 'none');
       window.addEventListener('click', (e) => {
