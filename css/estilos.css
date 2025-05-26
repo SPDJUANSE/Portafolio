@@ -102,10 +102,27 @@ nav {
   padding: 0 40px;
 }
 
-.nav-logo { 
-  font-size: 1.4rem; 
-  font-weight: 700;
+.nav-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-icon {
   color: var(--primary);
+  font-size: 1.2rem;
+  transition: color var(--transition);
+}
+
+.nav-icon:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .nav-menu { 
