@@ -1,6 +1,4 @@
-/* estilosProductos.css */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
+/* ====== Variables Globales ====== */
 :root {
     --primary: #2c3e50;
     --secondary: #34495e;
@@ -11,12 +9,18 @@
     --background: #ffffff;
     --background-alt: #f8f9fa;
     --border: #eaeaea;
-    --transition: 0.3s ease;
-    
+    --transition: 0.3s ease-in-out;
+
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Lora', serif;
+
+    --section-spacing: 100px;
+    --element-spacing: 30px;
+    --radius: 8px;
+    --shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
+/* ====== Reset Global ====== */
 * {
     margin: 0;
     padding: 0;
@@ -30,43 +34,49 @@ body {
     background-color: var(--background);
 }
 
-/* Navigation */
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ====== Navegación (Nav) ====== */
+nav {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    background: var(--background);
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
 }
 
 .nav-logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary);
+    position: relative;
     display: flex;
     align-items: center;
     gap: 15px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-decoration: none;
 }
 
 .header-icons {
     display: flex;
     gap: 15px;
-    margin-left: 1rem;
 }
 
 .nav-icon {
     color: var(--primary);
     font-size: 1.2rem;
-    transition: all var(--transition);
+    transition: color var(--transition), transform var(--transition);
 }
 
 .nav-icon:hover {
@@ -77,16 +87,16 @@ body {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 30px;
 }
 
 .nav-menu a {
-    text-decoration: none;
-    color: var(--text);
     font-weight: 500;
     font-size: 0.95rem;
+    color: var(--text);
     position: relative;
     transition: color var(--transition);
+    text-decoration: none;
 }
 
 .nav-menu a::after {
@@ -100,8 +110,7 @@ body {
     transition: width var(--transition);
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu a:hover {
     color: var(--accent);
 }
 
@@ -110,7 +119,11 @@ body {
     width: 100%;
 }
 
-/* Header */
+.nav-menu a.active {
+    color: var(--accent);
+}
+
+/* ====== Encabezado (Header) ====== */
 .header {
     height: 400px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -119,7 +132,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 70px;
+    margin-top: 70px; /* Compensa el nav fijo */
     position: relative;
     overflow: hidden;
 }
@@ -154,13 +167,7 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Main Content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
+/* ====== Sección Introductoria ====== */
 .intro-section {
     text-align: center;
     margin-bottom: 4rem;
@@ -183,7 +190,7 @@ body {
     line-height: 1.7;
 }
 
-/* Products Grid */
+/* ====== Grid de Productos ====== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -196,7 +203,7 @@ body {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    transition: transform var(--transition), box-shadow var(--transition);
     border: 1px solid var(--border);
     position: relative;
 }
@@ -224,6 +231,7 @@ body {
     z-index: 1;
 }
 
+/* ====== Encabezado de Producto ====== */
 .product-header {
     background: linear-gradient(135deg, var(--accent-light), var(--accent));
     padding: 2rem;
@@ -252,6 +260,7 @@ body {
     opacity: 0.9;
 }
 
+/* ====== Contenido de Producto ====== */
 .product-content {
     padding: 2rem;
 }
@@ -282,6 +291,7 @@ body {
     font-size: 1.2rem;
 }
 
+/* ====== Precio y CTA de Producto ====== */
 .product-price {
     text-align: center;
     margin-bottom: 2rem;
@@ -315,7 +325,7 @@ body {
     font-family: var(--font-heading);
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background var(--transition), transform var(--transition);
     text-decoration: none;
     display: block;
     text-align: center;
@@ -334,7 +344,7 @@ body {
     background: var(--secondary);
 }
 
-/* Technologies Section */
+/* ====== Sección de Tecnologías ====== */
 .technologies-section {
     background: var(--background-alt);
     padding: 4rem 2rem;
@@ -363,7 +373,7 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition);
 }
 
 .tech-item:hover {
@@ -390,7 +400,7 @@ body {
     line-height: 1.5;
 }
 
-/* CTA Section */
+/* ====== Sección de Llamada a la Acción (CTA) ====== */
 .cta-section {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
@@ -443,7 +453,7 @@ body {
     font-family: var(--font-heading);
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background var(--transition), transform var(--transition);
     text-decoration: none;
     display: inline-block;
     margin: 0 0.5rem;
@@ -465,7 +475,7 @@ body {
     color: var(--primary);
 }
 
-/* Footer */
+/* ====== Footer ====== */
 .footer {
     background: var(--primary);
     color: white;
@@ -479,37 +489,35 @@ body {
     opacity: 0.8;
 }
 
-/* Responsive Design */
+/* ====== Responsive Design ====== */
+
+/* --- Pantallas medianas (Tablet) --- */
 @media (max-width: 768px) {
     .nav-container {
-        padding: 1rem;
+        padding: 0 20px;
     }
-    
-    .nav-menu {
-        display: none;
-    }
-    
+
     .header {
         height: 300px;
         margin-top: 60px;
     }
-    
+
     .header h1 {
         font-size: 2rem;
     }
-    
+
     .intro-title {
         font-size: 2rem;
     }
-    
+
     .products-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-title {
         font-size: 2rem;
     }
-    
+
     .cta-button {
         display: block;
         width: 100%;
@@ -518,20 +526,128 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+/* --- Pantallas pequeñas --- */
+@media (max-width: 576px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        gap: 10px;
+        font-size: 0.85rem;
+    }
+
+    .header {
+        height: 280px;
+        margin-top: 60px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
     .header p {
         font-size: 1rem;
     }
-    
+
+    .intro-title {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .cta-button {
+        margin: 0.5rem auto;
+    }
+
+    .technologies-title {
+        font-size: 1.6rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* --- Extra pequeño --- */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 10px;
+    }
+
+    .header {
+        height: 250px;
+        margin-top: 70px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .intro-title {
+        font-size: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
     .product-header {
         padding: 1.5rem;
     }
-    
+
     .product-content {
         padding: 1.5rem;
     }
-    
+
+    .product-title {
+        font-size: 1.3rem;
+    }
+
+    .product-subtitle {
+        font-size: 0.9rem;
+    }
+
     .tech-grid {
         grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+        font-size: 1.5rem;
+    }
+
+    .cta-text {
+        font-size: 1rem;
+    }
+}
+
+/* --- Mejoras para dispositivos táctiles --- */
+@media (hover: none) and (pointer: coarse) {
+    .nav-icon:hover,
+    .product-card:hover,
+    .tech-item:hover,
+    .cta-button:hover {
+        transform: none;
+        box-shadow: none;
     }
 }
