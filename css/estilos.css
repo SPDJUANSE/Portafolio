@@ -242,7 +242,7 @@ nav {
 
 .banner-header.partner1 {
   background: none;
-  background-image: url('/Portafolio/Imagenes/Julilink.jpg'), linear-gradient(45deg, var(--accent), #29b960);
+  background-image: url('Imagenes/Julilink.jpg'), linear-gradient(45deg, var(--accent), #29b960);
   background-size: cover, cover;
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
@@ -251,7 +251,7 @@ nav {
 
 .banner-header.partner2 {
   background: none;
-  background-image: url('/Portafolio/Imagenes/MayLink.jpg'), linear-gradient(45deg, var(--accent), #2dbde0);
+  background-image: url('Imagenes/MayLink.jpg'), linear-gradient(45deg, var(--accent), #2dbde0);
   background-size: cover, cover;
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
