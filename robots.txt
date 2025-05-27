@@ -1,0 +1,9 @@
+User-agent: *
+
+Disallow:
+
+Allow: /
+
+Sitemap: https://portafolio-lime-theta-45.vercel.app/sitemap.xml
+
+

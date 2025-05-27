@@ -104,24 +104,36 @@ body {
     overflow: hidden;
 }
 
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 122, 0.836);
+    opacity: 0.3;
+}
+
 .header-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 2rem;
 }
 
-.header-title {
-    font-size: 3rem;
+.header h1 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     font-family: var(--font-heading);
 }
 
-.header-subtitle {
+.header p {
     font-size: 1.2rem;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9);
 }
+
 
 /* Main Content */
 .container {
