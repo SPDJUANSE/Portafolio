@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Google Tag Manager -->
-    <script>
+    <!-- Google Tag Manager (carga asíncrona) -->
+    <script defer>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -15,6 +15,7 @@
       })(window, document, "script", "dataLayer", "GTM-PX8WQX2K");
     </script>
     <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -32,22 +33,53 @@
     <meta name="author" content="Juan Sebastián García Porras" />
 
     <link rel="icon" type="image/png" href="/Imagenes/favicon.png" />
+
+    <!-- Preconnect a Google Fonts (ya estaba) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
-      rel="stylesheet"
-    />
 
+    <!-- Preload de las fuentes antes de usarlas -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="css/estilos.css" />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Font Awesome (preload + onload) -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+
+    <!-- Carga diferida de nuestro CSS principal (para evitar bloqueo de renderizado) -->
+    <link
+      rel="preload"
+      href="css/estilos.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="css/estilos.css" />
+    </noscript>
 
     <link rel="canonical" href="https://portafolio-lime-theta-45.vercel.app/" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data (sin cambios) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -57,7 +89,7 @@
         "description": "Desarrollador Web & Móvil especializado en Java, Python, React y más",
         "email": "spdjuanse@gmail.com",
         "url": "https://portafolio-lime-theta-45.vercel.app/",
-        "image": "https://portafolio-lime-theta-45.vercel.app/Imagenes/Hola.jpeg",
+        "image": "https://portafolio-lime-theta-45.vercel.app/Imagenes/Hola.webp",
         "alumniOf": [
           {
             "@type": "CollegeOrUniversity",
@@ -96,6 +128,7 @@
       }
     </script>
   </head>
+
   <body itemscope itemtype="https://schema.org/Person">
     <!-- Google Tag Manager (noscript) -->
     <noscript
@@ -107,7 +140,8 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Hidden structured data for better SEO -->
+
+    <!-- Hidden structured data para SEO (sin cambios) -->
     <div style="display: none">
       <span itemprop="name">Juan Sebastián García Porras</span>
       <span itemprop="jobTitle">Ingeniero de Software</span>
@@ -115,8 +149,10 @@
       <span itemprop="url">https://portafolio-lime-theta-45.vercel.app/</span>
       <img
         itemprop="image"
-        src="Imagenes/Hola.jpeg"
+        src="Imagenes/Hola.webp"
         alt="Juan Sebastián García Porras"
+        width="400"
+        height="400"
       />
     </div>
 
@@ -142,12 +178,15 @@
       </div>
     </nav>
 
-    <header class="header active" id="mainHeader">
+    <header class="header active" id="mainHeader" style="display: flex;">
       <div class="header-content">
+        <!-- Agregamos ancho y alto fijos para evitar layout shift y cambiamos a WebP -->
         <img
-          src="Imagenes/Hola.jpeg"
+          src="Imagenes/Hola.webp"
           alt="Juan Sebastian Garcia Porras en un espejo"
           loading="lazy"
+          width="400"
+          height="400"
           itemprop="image"
         />
         <h1 itemprop="name">Juan Sebastián García Porras</h1>
@@ -157,26 +196,34 @@
       </div>
     </header>
 
-    <header class="banner-header partner1" id="bannerHeader1">
+    <header class="banner-header partner1" id="bannerHeader1" style="display: none;">
       <div class="banner-content" onclick="handleBannerClick('JuliMoon')">
+        <!-- Carga diferida, WebP y dimensiones fijas -->
         <img
-          src="Imagenes/yo_colorful.jpeg"
+          src="Imagenes/yo_colorful.webp"
           alt="Juliana Muñoz Medina"
           class="banner-avatar"
+          loading="lazy"
+          width="200"
+          height="200"
         />
         <div class="banner-info">
           <h1>Juliana Muñoz Medina</h1>
-          <p>Ingeniera de Software | Con enfasis en redes y DevOs</p>
+          <p>Ingeniera de Software | Con énfasis en redes y DevOs</p>
         </div>
       </div>
     </header>
 
-    <header class="banner-header partner2" id="bannerHeader2">
+    <header class="banner-header partner2" id="bannerHeader2" style="display: none;">
       <div class="banner-content2" onclick="handleBannerClick('Cuchau')">
+        <!-- Carga diferida, WebP y dimensiones fijas -->
         <img
-          src="Imagenes/me.jpg"
+          src="Imagenes/me.webp"
           alt="Maycol Fuquene"
           class="banner-avatar2"
+          loading="lazy"
+          width="200"
+          height="200"
         />
         <div class="banner-info">
           <h1>Maycol Fuquene</h1>
@@ -185,13 +232,13 @@
       </div>
     </header>
 
-    <!-- Botón de alternancia -->
+    <!-- Botón de alternancia (sin cambios en estructura) -->
     <button
-      class="toggle-header-btn"
+      class="toggle-header-btn main"
       onclick="toggleHeader()"
       title="Cambiar vista de header"
     >
-      <i class="fas fa-exchange-alt" id="toggleIcon"></i>
+      <i class="fas fa-user" id="toggleIcon"></i>
     </button>
 
     <div class="container">
@@ -213,8 +260,8 @@
             <span itemprop="knowsAbout">JavaScript</span>,
             <span itemprop="knowsAbout">React</span> y
             <span itemprop="knowsAbout">Python</span>. Además, poseo
-           </p>
-           <p></p>
+          </p>
+          <p>
             conocimientos sólidos en
             <span itemprop="knowsAbout">PostgreSQL</span>,
             <span itemprop="knowsAbout">APIs REST</span>,
@@ -430,12 +477,12 @@
       <section id="courses">
         <h2>Cursos y Certificaciones</h2>
         <ul class="courses-list">
-          <li class="course-item" data-image="Diplomado.png">
+          <li class="course-item" data-image="Diplomado.webp">
             <strong>Diplomado en Desarrollo de aplicaciones web</strong><br />
             <span>Ministerio de las TIC y UNAB | Bogotá DC</span>
           </li>
 
-          <li class="course-item" data-image="TecnicoLaboral.png">
+          <li class="course-item" data-image="TecnicoLaboral.webp">
             <strong
               >Técnico Laboral en programación con énfasis en aplicaciones
               web</strong
@@ -443,7 +490,7 @@
             <span>Universidad Autónoma de Bucaramanga | Bogotá DC</span>
           </li>
 
-          <li class="course-item" data-image="Tecnico.png">
+          <li class="course-item" data-image="Tecnico.webp">
             <strong>Técnico en Programación de Software</strong><br />
             <span>SENA | Bogotá DC</span>
           </li>
@@ -453,10 +500,13 @@
       <div class="modal" id="certificateModal">
         <div class="modal-content">
           <button class="modal-close">&times;</button>
+          <!-- Imagen en WebP y con dimensiones -->
           <img
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
             alt="Certificado"
             id="certificateImage"
+            width="800"
+            height="600"
           />
         </div>
       </div>
@@ -562,7 +612,8 @@
       </p>
     </footer>
 
-    <script>
+    <!-- Scripts del sitio: se colocan al final y con defer para que no bloqueen -->
+    <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const modal = document.getElementById("certificateModal");
         const modalImg = document.getElementById("certificateImage");
@@ -571,6 +622,7 @@
         document.querySelectorAll(".course-item").forEach((item) => {
           item.addEventListener("click", function () {
             const imageName = this.dataset.image;
+            // Cargamos imágenes WebP en el modal
             modalImg.src = `./Imagenes/${imageName}`;
             modal.style.display = "flex";
           });
@@ -585,9 +637,9 @@
         });
 
         const preloadImages = [
-          "./Imagenes/Diplomado.png",
-          "./Imagenes/TecnicoLaboral.png",
-          "./Imagenes/Tecnico.png",
+          "./Imagenes/Diplomado.webp",
+          "./Imagenes/TecnicoLaboral.webp",
+          "./Imagenes/Tecnico.webp",
         ];
 
         preloadImages.forEach((src) => {
@@ -597,7 +649,6 @@
       });
 
       let currentState = 0; // 0: main header, 1: partner 1, 2: partner 2
-      const states = ["main", "partner1", "partner2"];
       const icons = ["fas fa-user", "fas fa-code", "fas fa-exchange-alt"];
 
       function toggleHeader() {
@@ -645,9 +696,15 @@
 
       function handleBannerClick(partner) {
         if (partner === "JuliMoon") {
-            window.open('https://julianamunozmedina.com?utm_source=Teo_s_Site&utm_medium=Banner&utm_campaign=Lanza_portafolio&utm_id=Lanzamiento', '_blank');
+          window.open(
+            "https://julianamunozmedina.com?utm_source=Teo_s_Site&utm_medium=Banner&utm_campaign=Lanza_portafolio&utm_id=Lanzamiento",
+            "_blank"
+          );
         } else if (partner === "Cuchau") {
-            window.open('https://www.tiktok.com/@fuzzychunk598/video/7036605525953449221?lang=es', '_blank');
+          window.open(
+            "https://www.tiktok.com/@fuzzychunk598/video/7036605525953449221?lang=es",
+            "_blank"
+          );
         }
       }
 
